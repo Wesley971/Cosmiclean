@@ -1,60 +1,91 @@
-# 💦 Site Vitrine – Entreprise de Nettoyage de Vitres
+# 💦 Site Vitrine – Cosmiclean Nettoyage
 
-Ce projet est un **site vitrine simple et responsive**, conçu pour une entreprise de nettoyage de carreaux (vitres, vitrines, vérandas, etc.).  
-Il a été inspiré du site [PurClean](https://www.purclean.fr) et développé en **HTML/CSS pur**, sans framework, dans une optique de clarté, rapidité et accessibilité.
+Ce projet est un **site vitrine responsive**, conçu pour une entreprise de nettoyage de vitres (maisons, vitrines, vérandas, bureaux...).  
+Il met en avant les services, l’identité de l’entrepreneuse, ses zones d’intervention, et facilite la prise de contact.
+
+> Inspiré du site *PurClean*, ce projet a été développé avec soin pour offrir une expérience fluide, claire et professionnelle.
 
 ---
 
-## ✨ Objectif
+## ✨ Objectifs
 
-Permettre à une jeune entrepreneuse de présenter ses services de manière professionnelle, avec :
-
-- Une page unique (one-page)
-- Une section présentation
-- Un aperçu des services
-- Des témoignages
-- Un formulaire de contact
-- Un design sobre, moderne et lisible
+- Présenter les prestations de Cosmiclean Nettoyage avec clarté
+- Inspirer confiance à travers une identité soignée et humaine
+- Faciliter la prise de contact (formulaire + WhatsApp)
+- Mettre en avant les zones desservies avec Google Maps
+- Montrer le travail de terrain via une galerie photo interactive
 
 ---
 
 ## 🧰 Technologies utilisées
 
-- HTML5
-- CSS3 (flexbox et responsive design)
-- Aucune dépendance externe
-- (Optionnel) Intégration possible avec [Formspree](https://formspree.io/) ou Netlify Forms pour le formulaire
+- **HTML5** (sémantique)
+- **CSS3** (flexbox, animations, media queries, light theme)
+- **JavaScript vanilla** (animations, slider, formulaire, Google Maps)
+- **Getform.io** pour l’envoi de formulaire
+- **Google Maps API** pour la zone d’intervention
+- **SwiperJS** (optionnel) pour un carousel moderne
+- **Lightbox** JS custom pour zoomer les prestations
 
 ---
 
 ## 📱 Responsive
 
-Le site s’adapte aux écrans mobiles, tablettes et ordinateurs.  
-L’objectif est de garder une expérience simple, claire et rapide, même sur smartphone.
+Le site est entièrement responsive :
+- Mobile-first
+- Navigation simplifiée
+- Lecture agréable même sur petits écrans
+- Police optimisée (`Alegreya Sans`)
+
+---
+
+## 🖼️ Fonctionnalités
+
+- 💬 Formulaire de contact avec message de confirmation
+- 📍 Carte Google Maps dynamique avec repères personnalisés
+- 📸 Galerie de photos avec zoom (lightbox)
+- 🎥 Vidéo en arrière-plan pour un effet immersif
+- 🧭 Navigation fluide avec effets d'apparition
 
 ---
 
 ## 🗂️ Structure du projet
 
-```
-📁 projet-nettoyage-vitres/
+📁 cosmiclean/
 ├── index.html
 ├── style.css
+├── js/
+│ └── main.js
+├── assets/
+│ ├── logo.gif
+│ ├── logo-footer.png
+│ ├── header-bg.mp4
+│ ├── photo-pri.jpg
+│ ├── prestations/
+│ │ ├── 1.jpg
+│ │ ├── 2.jpg
+│ │ └── 3.jpg
+│ └── bg-illustration.png
 └── README.md
-```
+
+yaml
+Copier
+Modifier
 
 ---
 
-## ✅ À faire encore (si besoin)
+## ✅ Améliorations possibles
 
-- Ajouter de vraies photos de l’entreprise
-- Mettre en place l’envoi du formulaire vers un email (via Formspree ou autre)
-- Ajouter Google Maps pour la zone d’intervention
-- Ajouter mentions légales et politique de confidentialité (si formulaire actif)
+- [ ] Ajouter une page *Mentions légales / politique de confidentialité*
+- [ ] Ajouter une section “Témoignages clients”
+- [ ] Ajout d’un favicon et d’une image Open Graph pour les partages
+- [ ] Ajout d’un mode sombre (facultatif)
+- [ ] Optimisation SEO (balises meta, accessibilité)
 
 ---
 
 ## 🔒 Licence
 
-Ce projet est libre d’utilisation pour toute entreprise souhaitant un site vitrine simple.  
-Si vous l’utilisez, un petit crédit est toujours apprécié 💙
+Ce projet est librement réutilisable pour toute entreprise de nettoyage ou activité locale.  
+Un petit crédit ou un lien retour est toujours apprécié 💙  
+Développé avec passion pour une belle initiative indépendante 🙌
