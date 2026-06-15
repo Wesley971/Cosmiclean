@@ -7,299 +7,297 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body.no-js section {
-      opacity: 1 !important;
-      transform: none !important;
-    }
+    body.no-js section { opacity: 1 !important; transform: none !important; }
   </style>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    }
-  });
-</script>
-
-
 
 <body class="no-js">
 
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <img src="./assets/logo.gif" alt="Logo Cosmiclean Nettoyage" class="logo" />
+    <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#contact" class="btn btn-nav">Demander un devis</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
-   <nav class="navbar">
-  <img src="./assets/logo.gif" alt="Logo Cosmiclean Nettoyage" class="logo" />
-  <a href="#contact" class="btn">Demander un devis</a>
-</nav>
-
- <!-- HERO -->
-<header class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="./assets/header-bg.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas la vidéo HTML5.
-  </video>
-  <div class="container hero-content">
-    <h1>Cosmiclean Nettoyage – Redonnez de l’éclat à vos vitres</h1>
-    <p>Service soigné et professionnel pour maisons, vitrines et bureaux.</p>
-    <a href="#contact" class="btn">Demander un devis gratuit</a>
-  </div>
-</header>
-
-
-
-<!-- À PROPOS -->
-<section class="about">
-  <div class="container">
-
-    <h2>À propos de Cosmiclean</h2>
-    <div class="about-photo-text">
-  <img src="./assets/photo-pri.jpg" alt="Prescilia Cardon - fondatrice de Cosmiclean" class="about-photo" />
-  <div class="about-text">
-    <p>
-      Je m'appelle Prescilia, fondatrice de Cosmiclean Nettoyage. Cette entreprise est née d’une reconversion, mais surtout d’un besoin profond : créer quelque chose qui me ressemble. Un service sérieux, soigné, et porté par des valeurs humaines.
-    </p>
-    <p>
-      Le nettoyage de vitres, c’est plus que de la propreté. C’est offrir de la clarté, de la lumière, du bien-être. J’interviens avec rigueur et bienveillance, auprès de particuliers comme de professionnels, toujours avec le sourire et le souci du détail.
-    </p>
-    <p>
-      Chaque client, chaque lieu est unique. Je m’engage à être à l’écoute, disponible et efficace. Cosmiclean, c’est mon projet de cœur : rendre les espaces plus nets, plus lumineux, et faire les choses proprement, dans tous les sens du terme.
-    </p>
-  </div>
-</div>
-  </div>
-</section>
-
-
-
-<!-- ZONE D'INTERVENTION -->
-<section class="zone">
-  <div class="container">
-    <h2>Zones desservies</h2>
-    <p>Je me déplace dans tout le secteur de Valenciennes, Vieux-Condé, Péruwelz et les environs.</p>
-    
-    <div id="map"></div>
-  </div>
-</section>
-
-
-
- <!-- SERVICES -->
-<section class="services">
-  <div class="container services-layout">
-    <div class="services-text">
-      <h2>Nos prestations</h2>
-      <ul>
-        <li>Nettoyage de vitres intérieures et extérieures</li>
-        <li>Vitrines de commerces et devantures</li>
-        <li>Baies vitrées, vérandas, verrières</li>
-        <li>Interventions ponctuelles ou contrats d’entretien régulier</li>
-      </ul>
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="./assets/header-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Cosmiclean Nettoyage<em>Redonnez de l'éclat à vos vitres</em></h1>
+      <p>Service soigné et professionnel pour maisons, vitrines et bureaux.</p>
+      <a href="#contact" class="btn btn-hero">Demander un devis gratuit</a>
     </div>
-
-    <div class="services-slider-wrapper">
-<div class="services-slider" id="servicesSlider">
-  <img src="./assets/prestations/1.jpg" alt="Vitres maison" onclick="openLightbox(this)" />
-  <img src="./assets/prestations/2.jpg" alt="Commerce" onclick="openLightbox(this)" />
-  <img src="./assets/prestations/3.jpg" alt="Véranda" onclick="openLightbox(this)" />
-</div>
-
-      <button class="slider-arrow left" onclick="prevService()">←</button>
-      <button class="slider-arrow right" onclick="nextService()">→</button>
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-arrow"></div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <main>
 
+    <!-- À PROPOS -->
+    <section class="about">
+      <div class="container">
+        <h2>À propos de Cosmiclean</h2>
+        <div class="about-photo-text">
+          <img src="./assets/photo-pri.jpg" alt="Prescilia Cardon - fondatrice de Cosmiclean" class="about-photo" />
+          <div class="about-text">
+            <p>Je m'appelle Prescilia, fondatrice de Cosmiclean Nettoyage. Cette entreprise est née d'une reconversion, mais surtout d'un besoin profond : créer quelque chose qui me ressemble. Un service sérieux, soigné, et porté par des valeurs humaines.</p>
+            <p>Le nettoyage de vitres, c'est plus que de la propreté. C'est offrir de la clarté, de la lumière, du bien-être. J'interviens avec rigueur et bienveillance, auprès de particuliers comme de professionnels, toujours avec le sourire et le souci du détail.</p>
+            <p>Chaque client, chaque lieu est unique. Je m'engage à être à l'écoute, disponible et efficace. Cosmiclean, c'est mon projet de cœur : rendre les espaces plus nets, plus lumineux, et faire les choses proprement, dans tous les sens du terme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ZONE D'INTERVENTION -->
+    <section class="zone">
+      <div class="container">
+        <h2>Zones desservies</h2>
+        <p class="section-intro">Je me déplace dans tout le secteur de Valenciennes, Vieux-Condé, Péruwelz et les environs.</p>
+        <div id="map"></div>
+      </div>
+    </section>
 
+    <!-- SERVICES -->
+    <section class="services">
+      <div class="container services-layout">
+        <div class="services-text">
+          <h2>Nos prestations</h2>
+          <ul>
+            <li>Nettoyage de vitres intérieures et extérieures</li>
+            <li>Vitrines de commerces et devantures</li>
+            <li>Baies vitrées, vérandas, verrières</li>
+            <li>Interventions ponctuelles ou contrats d'entretien régulier</li>
+          </ul>
+        </div>
+        <div class="services-slider-wrapper" id="sliderWrapper">
+          <div class="services-slider" id="servicesSlider">
+            <img src="./assets/prestations/1.jpg" alt="Nettoyage de vitres de maison" onclick="openLightbox(this)" />
+            <img src="./assets/prestations/2.jpg" alt="Nettoyage vitrine de commerce" onclick="openLightbox(this)" />
+            <img src="./assets/prestations/3.jpg" alt="Nettoyage de véranda" onclick="openLightbox(this)" />
+          </div>
+          <button class="slider-arrow left" onclick="prevService()" aria-label="Image précédente">&#8592;</button>
+          <button class="slider-arrow right" onclick="nextService()" aria-label="Image suivante">&#8594;</button>
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
+    </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Demander un devis</h2>
+        <p class="section-intro">Pour toute demande, remplissez le formulaire ci-dessous ou contactez-moi directement. Je vous répondrai dans les plus brefs délais.</p>
 
+        <form action="https://getform.io/f/aolowegb" method="POST" autocomplete="off" id="contactForm">
+          <div class="form-row">
+            <input type="text" name="nom" placeholder="Votre nom" required />
+            <input type="email" name="email" placeholder="Votre e-mail" required />
+          </div>
+          <input type="tel" name="telephone" placeholder="Votre numéro de téléphone (facultatif)" />
+          <textarea name="besoin" placeholder="Décrivez votre besoin (ex : vitres maison, véranda…)" required></textarea>
+          <textarea name="disponibilites" placeholder="Proposez 2 ou 3 créneaux qui vous conviennent (ex : mardi matin, jeudi 14h…)" required></textarea>
+          <input type="hidden" name="_gotcha" style="display:none">
+          <button type="submit" id="submitBtn">Envoyer ma demande</button>
+        </form>
 
+        <div class="contact-channels">
+          <a href="https://wa.me/33768728002" target="_blank" rel="noopener noreferrer" class="channel-card channel-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+33768728002" class="channel-card channel-tel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.66A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            06 78 72 80 02
+          </a>
+          <a href="mailto:cosmiclean.nettoyage@gmail.com" class="channel-card channel-mail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            cosmiclean.nettoyage@gmail.com
+          </a>
+        </div>
 
+      </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Demander un devis</h2>
-    <p>Pour toute demande, remplissez le formulaire ci-dessous ou contactez-moi par e-mail. Je vous répondrai dans les plus brefs délais.</p>
-    <form action="https://getform.io/f/aolowegb" method="POST" autocomplete="off">
-  <input type="text" name="nom" placeholder="Votre nom" required />
-  <input type="email" name="email" placeholder="Votre e-mail" required />
-  <input type="tel" name="telephone" placeholder="Votre numéro de téléphone (facultatif)" />
+  </main>
 
-  
-  <textarea name="besoin" placeholder="Décrivez votre besoin (ex : vitres maison, véranda…)" required></textarea>
-  
-  <textarea name="disponibilites" placeholder="Proposez 2 ou 3 créneaux qui vous conviennent (ex : mardi matin, jeudi 14h…)" required></textarea>
-  
-  <!-- Anti-spam -->
-  <input type="hidden" name="_gotcha" class="honeypot">
-
-  
-      
-
-  <button type="submit">Envoyer</button>
-</form>
-
-
-    <div class="contact-links">
-  <a href="https://wa.me/33768728002" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
-    💬 Discuter via WhatsApp
-  </a><br />
-  <span class="phone-note">
-    ou appelez au <a href="tel:+33768728002" class="phone-link">06 78 72 80 02</a>
-  </span><br />
-  <a href="mailto:cosmiclean.nettoyage@gmail.com">📧 cosmiclean.nettoyage@gmail.com</a>
-</div>
-
-
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container footer-content">
-    <div class="footer-left">
-      <img src="./assets/logo-footer.png" alt="Logo Cosmiclean Nettoyage" class="footer-logo" />
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <img src="./assets/logo-footer.png" alt="Logo Cosmiclean Nettoyage" class="footer-logo" />
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2025 Cosmiclean Nettoyage<br>Tous droits réservés – Prestations sur devis uniquement.</p>
+      </div>
     </div>
-    <div class="footer-right">
-      <p>&copy; 2025 Cosmiclean Nettoyage<br />
-      Tous droits réservés – Prestations sur devis uniquement.</p>
-    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Image agrandie">
+    <img id="lightboxImage" src="" alt="" />
   </div>
-</footer>
-<div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
-  <img id="lightboxImage" src="" alt="Zoom image" />
-</div>
-<script>
-  function openLightbox(img) {
-    const lightbox = document.getElementById('lightboxOverlay');
-    const lightboxImg = document.getElementById('lightboxImage');
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
-  }
 
-  function closeLightbox() {
-    document.getElementById('lightboxOverlay').style.display = 'none';
-  }
-</script>
-
-<script>
-  const slider = document.getElementById("servicesSlider");
-  const slides = slider.querySelectorAll("img");
-  let index = 0;
-
-  function updateServiceSlider() {
-    slider.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  function nextService() {
-    index = (index + 1) % slides.length;
-    updateServiceSlider();
-  }
-
-  function prevService() {
-    index = (index - 1 + slides.length) % slides.length;
-    updateServiceSlider();
-  }
-
-  let autoSlide = setInterval(nextService, 5000);
-
-  const wrapper = document.querySelector('.services-slider-wrapper');
-  wrapper.addEventListener('mouseenter', () => clearInterval(autoSlide));
-  wrapper.addEventListener('mouseleave', () => {
-    autoSlide = setInterval(nextService, 5000);
-  });
-</script>
-
-
-<script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Empêche l'envoi classique
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" }
-    }).then(response => {
-      if (response.ok) {
-        form.reset(); // Vide les champs
-        form.insertAdjacentHTML("afterend", "<p class='merci-msg'>✔️ Merci pour votre message ! Nous vous recontacterons rapidement.</p>");
-      } else {
-        alert("Une erreur est survenue. Veuillez réessayer.");
-      }
-    });
-  });
-</script>
-<script>
-  function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 10,
-      center: { lat: 50.4494, lng: 3.5286 }, // Centré sur Valenciennes
-    });
-
-    const zones = [
-      { name: "Valenciennes", position: { lat: 50.35, lng: 3.52 } },
-      { name: "Vieux-Condé", position: { lat: 50.456, lng: 3.590 } },
-      { name: "Péruwelz", position: { lat: 50.5, lng: 3.6 } }
-    ];
-
-    zones.forEach(zone => {
-      new google.maps.Marker({
-        position: zone.position,
-        map,
-        title: zone.name
-      });
-    });
-  }
-</script>
-
-<!-- Clé API Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8uj_d08mmxvnaPFv8m82JccyoIIh9TI&callback=initMap" async defer></script>
-
-
-
+  <!-- =====================================================
+       SCRIPTS — en fin de <body> (bug fix #1)
+       ===================================================== -->
 
   <script>
-  document.body.classList.remove('no-js');
-
-  // Observer pour les sections qui apparaissent
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        sectionObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
-  });
-
-  // Navbar scroll effect
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    function openLightbox(img) {
+      const overlay = document.getElementById('lightboxOverlay');
+      document.getElementById('lightboxImage').src = img.src;
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
-  });
-</script>
+    function closeLightbox() {
+      document.getElementById('lightboxOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+  <script>
+    // Slider services — largeur dynamique (bug fix #3)
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const slider = document.getElementById('servicesSlider');
+    const slides = slider.querySelectorAll('img');
+    const dotsContainer = document.getElementById('sliderDots');
+    let currentIndex = 0;
+
+    slides.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Image ' + (i + 1));
+      dot.addEventListener('click', function() { currentIndex = i; updateSlider(); });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateImageWidths() {
+      var w = sliderWrapper.offsetWidth;
+      slides.forEach(function(img) { img.style.width = w + 'px'; });
+    }
+
+    function updateSlider() {
+      var w = sliderWrapper.offsetWidth;
+      slider.style.transform = 'translateX(-' + (currentIndex * w) + 'px)';
+      document.querySelectorAll('.slider-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextService() { currentIndex = (currentIndex + 1) % slides.length; updateSlider(); }
+    function prevService() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateSlider(); }
+
+    updateImageWidths();
+    updateSlider();
+
+    var autoSlide = setInterval(nextService, 5000);
+    sliderWrapper.addEventListener('mouseenter', function() { clearInterval(autoSlide); });
+    sliderWrapper.addEventListener('mouseleave', function() { autoSlide = setInterval(nextService, 5000); });
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() { updateImageWidths(); updateSlider(); }, 100);
+    });
+  </script>
+
+  <script>
+    var form = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('submitBtn');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      }).then(function(r) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma demande';
+        if (r.ok) {
+          form.reset();
+          var msg = document.createElement('p');
+          msg.className = 'merci-msg';
+          msg.textContent = 'Merci ! Je vous recontacte rapidement.';
+          form.insertAdjacentElement('afterend', msg);
+        } else {
+          alert('Une erreur est survenue. Veuillez réessayer.');
+        }
+      }).catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma demande';
+        alert('Erreur réseau. Veuillez réessayer.');
+      });
+    });
+  </script>
+
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: { lat: 50.4494, lng: 3.5286 },
+      });
+      [
+        { name: 'Valenciennes', position: { lat: 50.35, lng: 3.52 } },
+        { name: 'Vieux-Condé',  position: { lat: 50.456, lng: 3.590 } },
+        { name: 'Péruwelz',     position: { lat: 50.5, lng: 3.6 } }
+      ].forEach(function(z) {
+        new google.maps.Marker({ position: z.position, map: map, title: z.name });
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8uj_d08mmxvnaPFv8m82JccyoIIh9TI&callback=initMap" async defer></script>
+
+  <script>
+    document.body.classList.remove('no-js');
+
+    var sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('section').forEach(function(s) {
+      sectionObserver.observe(s);
+    });
+
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    var hamburgerBtn = document.getElementById('hamburgerBtn');
+    var navLinks = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', function() {
+      var isOpen = hamburgerBtn.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      navLinks.classList.toggle('open', isOpen);
+    });
+    var navAnchor = navLinks.querySelector('a');
+    if (navAnchor) {
+      navAnchor.addEventListener('click', function() {
+        hamburgerBtn.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+      });
+    }
+  </script>
+
 </body>
 </html>
