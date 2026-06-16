@@ -9,9 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <meta name="color-scheme" content="light">
-  <style>
-    body.no-js section { opacity: 1 !important; transform: none !important; }
-  </style>
 </head>
 
 <body class="no-js">
@@ -29,7 +26,7 @@
 
   <!-- HERO -->
   <header class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video autoplay muted loop playsinline webkit-playsinline disablepictureinpicture class="hero-video">
       <source src="./assets/header-bg.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -69,10 +66,9 @@
           src="https://maps.google.com/maps?q=Valenciennes+Nord+France&z=10&hl=fr&output=embed"
           width="100%"
           height="350"
-          style="border:0; border-radius:12px;"
           allowfullscreen
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerpolicy="strict-origin-when-cross-origin"
           title="Zone d'intervention Cosmiclean Nettoyage">
         </iframe>
       </div>
@@ -146,7 +142,7 @@
           <input type="tel" name="telephone" placeholder="Votre numéro de téléphone (facultatif)" />
           <textarea name="besoin" placeholder="Décrivez votre besoin (ex : vitres maison, véranda…)" required></textarea>
           <textarea name="disponibilites" placeholder="Proposez 2 ou 3 créneaux qui vous conviennent (ex : mardi matin, jeudi 14h…)" required></textarea>
-          <input type="hidden" name="_gotcha" style="display:none">
+          <input type="hidden" name="_gotcha">
           <button type="submit" id="submitBtn">Envoyer ma demande</button>
         </form>
 
