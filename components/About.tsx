@@ -11,7 +11,7 @@ export default function About() {
         <div className="flex items-start gap-14 flex-wrap md:flex-nowrap">
           {/* Photo */}
           <img
-            src="/assets/photo-pri.jpg"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/photo-pri.jpg`}
             alt="Prescilia Cardon - fondatrice de Cosmiclean"
             className="w-[260px] shrink-0 rounded-2xl shadow-[0_10px_36px_rgba(0,0,0,0.12)]
               border-4 border-cosmic-cyan mx-auto md:mx-0"

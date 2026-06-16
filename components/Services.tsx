@@ -3,10 +3,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import RevealSection from './RevealSection'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const SLIDES = [
-  { src: '/assets/prestations/1.jpg', alt: 'Nettoyage de vitres de maison' },
-  { src: '/assets/prestations/2.jpg', alt: 'Nettoyage vitrine de commerce' },
-  { src: '/assets/prestations/3.jpg', alt: 'Nettoyage de véranda' },
+  { src: `${BASE}/assets/prestations/1.jpg`, alt: 'Nettoyage de vitres de maison' },
+  { src: `${BASE}/assets/prestations/2.jpg`, alt: 'Nettoyage vitrine de commerce' },
+  { src: `${BASE}/assets/prestations/3.jpg`, alt: 'Nettoyage de véranda' },
 ]
 
 const CARDS = [

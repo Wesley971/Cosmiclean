@@ -13,7 +13,7 @@ export default function Hero() {
         disablePictureInPicture
         className="absolute inset-0 w-full h-full object-cover z-0 brightness-[0.55]"
       >
-        <source src="/assets/header-bg.mp4" type="video/mp4" />
+        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/header-bg.mp4`} type="video/mp4" />
       </video>
 
       {/* Gradient overlay */}

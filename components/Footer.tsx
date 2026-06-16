@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex-1">
             <img
-              src="/assets/logo-footer.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/logo-footer.png`}
               alt="Logo Cosmiclean Nettoyage"
               className="logo-footer max-h-[110px] block"
             />

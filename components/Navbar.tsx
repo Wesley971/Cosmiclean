@@ -28,7 +28,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <img
-        src="/assets/logo.gif"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/logo.gif`}
         alt="Logo Cosmiclean Nettoyage"
         className={`logo-nav h-[50px] w-auto transition-transform duration-300 ${scrolled ? 'scale-[0.88]' : ''}`}
       />
