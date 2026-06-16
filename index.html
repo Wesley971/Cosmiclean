@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light">
   <style>
     body.no-js section { opacity: 1 !important; transform: none !important; }
   </style>
@@ -64,31 +65,69 @@
       <div class="container">
         <h2>Zones desservies</h2>
         <p class="section-intro">Je me déplace dans tout le secteur de Valenciennes, Vieux-Condé, Péruwelz et les environs.</p>
-        <div id="map"></div>
+        <iframe
+          src="https://maps.google.com/maps?q=Valenciennes+Nord+France&z=10&hl=fr&output=embed"
+          width="100%"
+          height="350"
+          style="border:0; border-radius:12px;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Zone d'intervention Cosmiclean Nettoyage">
+        </iframe>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section class="services">
-      <div class="container services-layout">
-        <div class="services-text">
-          <h2>Nos prestations</h2>
-          <ul>
-            <li>Nettoyage de vitres intérieures et extérieures</li>
-            <li>Vitrines de commerces et devantures</li>
-            <li>Baies vitrées, vérandas, verrières</li>
-            <li>Interventions ponctuelles ou contrats d'entretien régulier</li>
-          </ul>
-        </div>
-        <div class="services-slider-wrapper" id="sliderWrapper">
-          <div class="services-slider" id="servicesSlider">
-            <img src="./assets/prestations/1.jpg" alt="Nettoyage de vitres de maison" onclick="openLightbox(this)" />
-            <img src="./assets/prestations/2.jpg" alt="Nettoyage vitrine de commerce" onclick="openLightbox(this)" />
-            <img src="./assets/prestations/3.jpg" alt="Nettoyage de véranda" onclick="openLightbox(this)" />
+      <div class="container">
+        <h2>Nos prestations</h2>
+        <div class="services-layout">
+          <div class="services-cards">
+            <div class="service-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#11cbd2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <line x1="12" y1="4" x2="12" y2="20"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
+              <p>Nettoyage de vitres intérieures et extérieures</p>
+            </div>
+            <div class="service-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#11cbd2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l1-5h16l1 5"/>
+                <path d="M3 9h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+              </svg>
+              <p>Vitrines de commerces et devantures</p>
+            </div>
+            <div class="service-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#11cbd2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l9-6 9 6v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                <rect x="8" y="12" width="8" height="8"/>
+                <line x1="12" y1="12" x2="12" y2="20"/>
+              </svg>
+              <p>Baies vitrées, vérandas, verrières</p>
+            </div>
+            <div class="service-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#11cbd2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+              </svg>
+              <p>Interventions ponctuelles ou contrats d'entretien régulier</p>
+            </div>
           </div>
-          <button class="slider-arrow left" onclick="prevService()" aria-label="Image précédente">&#8592;</button>
-          <button class="slider-arrow right" onclick="nextService()" aria-label="Image suivante">&#8594;</button>
-          <div class="slider-dots" id="sliderDots"></div>
+          <div class="services-slider-wrapper" id="sliderWrapper">
+            <div class="services-slider" id="servicesSlider">
+              <img src="./assets/prestations/1.jpg" alt="Nettoyage de vitres de maison" onclick="openLightbox(this)" />
+              <img src="./assets/prestations/2.jpg" alt="Nettoyage vitrine de commerce" onclick="openLightbox(this)" />
+              <img src="./assets/prestations/3.jpg" alt="Nettoyage de véranda" onclick="openLightbox(this)" />
+            </div>
+            <button class="slider-arrow left" onclick="prevService()" aria-label="Image précédente">&#8592;</button>
+            <button class="slider-arrow right" onclick="nextService()" aria-label="Image suivante">&#8594;</button>
+            <div class="slider-dots" id="sliderDots"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -243,23 +282,6 @@
       });
     });
   </script>
-
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: { lat: 50.4494, lng: 3.5286 },
-      });
-      [
-        { name: 'Valenciennes', position: { lat: 50.35, lng: 3.52 } },
-        { name: 'Vieux-Condé',  position: { lat: 50.456, lng: 3.590 } },
-        { name: 'Péruwelz',     position: { lat: 50.5, lng: 3.6 } }
-      ].forEach(function(z) {
-        new google.maps.Marker({ position: z.position, map: map, title: z.name });
-      });
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8uj_d08mmxvnaPFv8m82JccyoIIh9TI&callback=initMap" async defer></script>
 
   <script>
     document.body.classList.remove('no-js');

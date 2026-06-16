@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+:root {
+  color-scheme: light only;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,20 +19,10 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
   font-size: 1rem;
-  background: #f4fbfd;
+  background: #ffffff;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url('./assets/bg-illustration.png') no-repeat center center / cover;
-  z-index: -1;
-  opacity: 0.3;
-  pointer-events: none;
 }
 
 img {
@@ -64,7 +58,7 @@ p {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 0 2rem;
 }
 
 /* ============================================================
@@ -91,8 +85,12 @@ p {
 }
 
 .logo {
-  max-height: 88px;
+  height: 50px;
+  width: auto;
+  image-rendering: crisp-edges;
   transition: transform 0.35s ease;
+  mix-blend-mode: multiply;
+  forced-color-adjust: none;
 }
 
 .navbar.scrolled .logo {
@@ -295,11 +293,7 @@ p {
    SECTIONS — base
    ============================================================ */
 section {
-  background: #f2f7f7;
-  margin: 2rem 0;
-  border-radius: 20px;
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.045);
-  overflow: hidden;
+  padding: 80px 0;
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
@@ -321,6 +315,10 @@ section.visible {
 /* ============================================================
    ABOUT
    ============================================================ */
+.about {
+  background: #ffffff;
+}
+
 .about .container {
   text-align: left;
 }
@@ -367,38 +365,33 @@ section.visible {
    ============================================================ */
 .zone {
   text-align: center;
+  background: #f0f8f8;
 }
 
-#map {
-  height: 400px;
-  width: 100%;
-  border-radius: 14px;
+.zone iframe {
   margin-top: 1.5rem;
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
 /* ============================================================
    SERVICES
    ============================================================ */
-.services .container {
-  text-align: left;
+.services {
+  background: #ffffff;
+}
+
+.services .container > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .services-layout {
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
   flex-wrap: wrap;
-}
-
-.services-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.services-text h2 {
-  text-align: left;
-  margin-bottom: 1.5rem;
 }
 
 ul {
@@ -426,16 +419,52 @@ ul li::before {
   background: #11cbd2;
 }
 
-/* Slider — bug fix #3 : 360px + object-fit: cover */
+/* Cards de prestations */
+.services-cards {
+  flex: 1;
+  min-width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+
+.service-card svg {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Slider */
 .services-slider-wrapper {
   position: relative;
-  width: 360px;
-  max-width: 100%;
-  height: 460px;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 12px 44px rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
+  align-self: center;
 }
 
 .services-slider {
@@ -445,10 +474,10 @@ ul li::before {
 }
 
 .services-slider img {
-  width: 360px;      /* valeur par défaut, remplacée par JS sur mobile */
+  width: 500px;      /* valeur par défaut, remplacée par JS */
   flex-shrink: 0;
-  height: 100%;
-  object-fit: cover; /* bug fix #3 */
+  height: 300px;
+  object-fit: cover;
   cursor: zoom-in;
 }
 
@@ -523,6 +552,7 @@ ul li::before {
    ============================================================ */
 .contact {
   text-align: center;
+  background: #f0f8f8;
 }
 
 .contact form {
@@ -701,6 +731,8 @@ ul li::before {
 .footer-logo {
   max-height: 110px;
   display: block;
+  mix-blend-mode: screen;
+  forced-color-adjust: none;
 }
 
 /* ============================================================
@@ -797,12 +829,11 @@ ul li::before {
   }
 
   .container {
-    padding: 3rem 1.5rem;
+    padding: 0 1.5rem;
   }
 
   section {
-    margin: 1.25rem 0;
-    border-radius: 14px;
+    padding: 48px 0;
   }
 
   /* Hero */
@@ -829,13 +860,13 @@ ul li::before {
     align-items: center;
   }
 
-  .services-text          { min-width: unset; width: 100%; text-align: center; }
-  .services-text h2       { text-align: center; }
-  ul li                   { text-align: left; }
+  .services-cards         { grid-template-columns: 1fr; width: 100%; }
+  .service-card           { text-align: left; }
 
   .services-slider-wrapper {
     width: 100%;
-    height: 340px;
+    max-width: 500px;
+    height: 300px;
   }
 
   /* Contact */
