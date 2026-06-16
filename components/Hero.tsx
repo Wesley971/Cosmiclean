@@ -17,22 +17,14 @@ export default function Hero() {
       </video>
 
       {/* Gradient overlay */}
-      <div
-        className="absolute inset-0 z-[1] pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            'linear-gradient(to top, rgba(10,44,54,0.72) 0%, rgba(10,44,54,0.18) 52%, transparent 100%)',
-        }}
-      />
+      <div className="hero-overlay absolute inset-0 z-[1] pointer-events-none" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-[2] px-8 max-w-[860px] mx-auto">
         <h1 className="text-hero-h1 font-serif font-bold text-white mb-[1.2rem]
           [text-shadow:0_2px_24px_rgba(0,0,0,0.22)] animate-fade-in-down">
           Cosmiclean Nettoyage
-          <em className="block text-[0.58em] font-normal not-italic opacity-[0.88] mt-2 tracking-[0.01em]
-            italic font-serif">
+          <em className="block text-[0.58em] font-normal italic opacity-[0.88] mt-2 tracking-[0.01em] font-serif">
             Redonnez de l&apos;éclat à vos vitres
           </em>
         </h1>

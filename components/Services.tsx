@@ -95,7 +95,7 @@ export default function Services() {
         <div className="flex justify-center items-start gap-8 flex-wrap">
 
           {/* Cards 2×2 */}
-          <div className="flex-1 min-w-[280px] grid grid-cols-2 gap-4">
+          <div className="flex-1 min-w-[280px] grid grid-cols-1 md:grid-cols-2 gap-4">
             {CARDS.map((card, i) => (
               <div
                 key={i}
@@ -120,15 +120,15 @@ export default function Services() {
             {/* Track */}
             <div
               className="slider-track flex h-full"
-              style={{ transform: `translateX(-${currentIndex * sliderWidth}px)` }}
+              style={{ '--slider-tx': `translateX(-${currentIndex * sliderWidth}px)` } as React.CSSProperties}
             >
               {SLIDES.map(slide => (
                 <img
                   key={slide.src}
                   src={slide.src}
                   alt={slide.alt}
-                  className="shrink-0 h-full object-cover cursor-zoom-in"
-                  style={{ width: sliderWidth }}
+                  className="slider-img shrink-0 h-full object-cover cursor-zoom-in"
+                  style={{ '--slide-w': `${sliderWidth}px` } as React.CSSProperties}
                   onClick={() => setLightboxSrc(slide.src)}
                 />
               ))}

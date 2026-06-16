@@ -14,12 +14,11 @@ export default function Zone() {
           src="https://maps.google.com/maps?q=Valenciennes+Nord+France&z=10&hl=fr&output=embed"
           width="100%"
           height="350"
-          style={{ border: 0, borderRadius: '12px' }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           title="Zone d'intervention Cosmiclean Nettoyage"
-          className="shadow-[0_6px_28px_rgba(0,0,0,0.08)] block mt-6"
+          className="map-iframe shadow-[0_6px_28px_rgba(0,0,0,0.08)] block mt-6"
         />
       </div>
     </RevealSection>

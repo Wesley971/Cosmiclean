@@ -40,7 +40,7 @@ export default function Navbar() {
           transition-all hover:bg-cosmic-cyan/[0.06] hover:border-cosmic-cyan/25
           focus-visible:outline-2 focus-visible:outline-cosmic-cyan focus-visible:outline-offset-2"
         aria-label="Ouvrir le menu"
-        aria-expanded={menuOpen}
+        aria-expanded={menuOpen ? 'true' : 'false'}
         onClick={() => setMenuOpen(o => !o)}
       >
         <span className={`block w-[22px] h-[2px] bg-cosmic-dark rounded transition-transform duration-300 origin-center ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
